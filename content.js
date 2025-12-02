@@ -1,4 +1,5 @@
 // content.js
+console.log('Stylizer content script loaded');
 
 let stylizerInjected = false;
 
