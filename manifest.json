@@ -1,0 +1,25 @@
+{
+  "name": "Symbols & Text Stylizer",
+  "description": "Floating Symbols & Text Stylizer toolbox on any page.",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "toggle-stylizer": {
+      "suggested_key": { "default": "Ctrl+Shift+Y" },
+      "description": "Toggle Symbols & Text Stylizer"
+    }
+  },
+  "action": {}
+}
