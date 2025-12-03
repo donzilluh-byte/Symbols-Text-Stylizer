@@ -3,22 +3,45 @@
   "description": "Floating Symbols & Text Stylizer toolbox on any page.",
   "version": "1.0.0",
   "manifest_version": 3,
-  "permissions": ["activeTab", "scripting"],
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "css": ["styles.css"],
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
       "run_at": "document_idle"
     }
   ],
   "commands": {
     "toggle-stylizer": {
-      "suggested_key": { "default": "Ctrl+Shift+Y" },
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
       "description": "Toggle Symbols & Text Stylizer"
+    },
+    "stylize-selection-bold": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+1"
+      },
+      "description": "Stylize selected text as Bold Math"
+    },
+    "stylize-selection-cursive": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+2"
+      },
+      "description": "Stylize selected text as Cursive Math"
     }
   },
   "action": {}

@@ -1,4 +1,4 @@
-        // ===== FLOATING WINDOW MANAGEMENT =====
+ // ===== FLOATING WINDOW MANAGEMENT =====
         let draggedWindow = null;
         let offsetX = 0;
         let offsetY = 0;
@@ -133,6 +133,7 @@
                 return lines.map(lineNum => text.toUpperCase().split('').map(char => (ascii[char] || '     ').split('\n')[lineNum]).join(' ')).join('\n');
             }
         };
+window.textStyles = textStyles;
 
         // ===== SYMBOLS DATA =====
         const symbolsData = {
@@ -320,10 +321,13 @@
 
         // Set initial window position (top-left, slightly offset)
         const mainWindow = document.getElementById('mainWindow');
+       if (mainWindow) {
         mainWindow.style.left = '20px';
-        mainWindow.style.top = '20px';
+         mainWindow.style.top = '20px';
         mainWindow.style.width = '500px';
         mainWindow.style.maxHeight = '80vh';
+       }
+
 
         // ===== LOGO CREATOR FUNCTIONALITY =====
         const logoText = document.getElementById('logoText');
@@ -614,10 +618,8 @@
                 });
             });
         }, 100);
-    </script>
 
-    <!-- Service Worker for Offline Support -->
-    <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('data:application/javascript;base64,Ly8gU2ltcGxlIFNlcnZpY2UgV29ya2VyIGZvciBvZmZsaW5lIHN1cHBvcnQ=').catch(() => {});
         }
+
