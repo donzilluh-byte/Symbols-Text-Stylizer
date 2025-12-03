@@ -1,3 +1,4 @@
+ console.log('app.js loaded');
  // ===== FLOATING WINDOW MANAGEMENT =====
         let draggedWindow = null;
         let offsetX = 0;
